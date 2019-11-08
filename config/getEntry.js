@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const getPath = require('./getPath');
 /**
@@ -11,8 +12,12 @@ module.exports = function getEntry(path_url){
 		/**
 		 * 配置对应页面面entry
 		 */
-
+		console.log('is exists:', fs.existsSync(`${path_url}/${item}/index.js`));
+		if (fs.existsSync(`${path_url}/${item}/index.js`)) {
+			console.log('is exists:');
+		}
 		 entry[`${item}`] = `${path_url}/${item}/index.js`;
+		//  entry[`${item}`] = path.resolve(`${path_url}/${item}/index.js`);
 		//  entry[`${item}`] = path.join(__dirname, `${path_url}/${item}/index.js`);
 	})
 	console.log('this si entry', entry);

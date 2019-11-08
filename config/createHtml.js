@@ -4,6 +4,7 @@
  */
 
 const fs = require('fs');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const getPath = require('./getPath');
 let htmlArr = [];
@@ -29,7 +30,7 @@ module.exports = function createHtml(page_path){
 				description: infoData.description ? infoData.description : '页面描述'
 			},
 			chunks: [`${item}`],									// 引入js
-			template: '../public/index.html',			// 页面模板
+			template: path.join(__dirname, '../public/index.html'),			// 页面模板
 			filename: item === 'index' ? 'index.html' : `${item}/index.html`,			// html 位置
 			minify: {
 				removeComments: true,
