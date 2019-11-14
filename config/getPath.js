@@ -8,9 +8,8 @@ const path = require('path');
  */
 module.exports = function getPath(path_url) {
 	let arr = [];
-	path_url = path.join(__dirname, path_url);
-	let existpath = fs.existsSync(path_url); 			// 是否存在目录
-	if (existpath) {
+	let existPath = fs.existsSync(path_url); 			// 是否存在目录
+	if (existPath) {
 		let readdirSync = fs.readdirSync(path_url);	// 获取目录下文件	
 		readdirSync.map((item) => {
 			let currentPath = path_url + '/' + item;

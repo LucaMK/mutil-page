@@ -30,8 +30,8 @@ const eslint = require('eslint');
 // 获取entry
 const getEntrys = require('./getEntry');
 const createHtml = require('./createHtml');
-const entrys = getEntrys('./src/pages');
-const htmlsPlugin = createHtml('./src/pages');
+const entrys = getEntrys(paths.pagesPath);
+const htmlsPlugin = createHtml(paths.pagesPath);
 
 const postcssNormalize = require('postcss-normalize');
 
