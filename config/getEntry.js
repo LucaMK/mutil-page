@@ -8,6 +8,7 @@ const getPath = require('./getPath');
  */
 module.exports = function getEntry(path_url){
 	let entry = {};
+	console.log('this is path_url?', path_url, fs.statSync(path_url).isDirectory());
 	getPath(path_url).map((item) => {
 		/**
 		 * 配置对应页面面entry
